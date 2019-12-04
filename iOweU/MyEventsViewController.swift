@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MyEventsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -21,8 +21,13 @@ class RestaurantViewController: UIViewController, UICollectionViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+        return headerView
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "eventCell", for: indexPath)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -30,6 +35,50 @@ class RestaurantViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
+    
+    // Add Unwind here
+    @IBAction func unwindLocationCancel (segue:UIStoryboardSegue){}
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

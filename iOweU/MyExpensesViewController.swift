@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MyExpensesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,12 +22,12 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header2", for: indexPath)
         return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "expenseCell", for: indexPath)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -40,45 +40,4 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
     
     // Add Unwind here
     @IBAction func unwindLocationCancel (segue:UIStoryboardSegue){}
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
